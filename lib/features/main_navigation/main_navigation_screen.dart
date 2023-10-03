@@ -15,14 +15,6 @@ class MainNavigationScreen extends StatefulWidget {
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 0;
 
-  /// GlobalKey를 지정해줘야 서로 다른 Screen인것을 감지할 수 있다.
-  final screens = [
-    StfScreen(key: GlobalKey()),
-    StfScreen(key: GlobalKey()),
-    StfScreen(key: GlobalKey()),
-    StfScreen(key: GlobalKey()),
-  ];
-
   void _onTap(int index) {
     setState(() {
       _selectedIndex = index;
@@ -32,7 +24,26 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[_selectedIndex],
+      body: Stack(
+        children: [
+          Offstage(
+            offstage: _selectedIndex != 0,
+            child: const StfScreen(),
+          ),
+          Offstage(
+            offstage: _selectedIndex != 1,
+            child: const StfScreen(),
+          ),
+          Offstage(
+            offstage: _selectedIndex != 3,
+            child: const StfScreen(),
+          ),
+          Offstage(
+            offstage: _selectedIndex != 4,
+            child: const StfScreen(),
+          ),
+        ],
+      ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.black,
         child: Padding(
