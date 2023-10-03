@@ -12,3 +12,6 @@
 - m3NavigationBar
   `material 디자인 v3 Widget으로 구현한 Navigate Bar`
   https://m3.material.io/components/navigation-bar/overview
+
+- globalKey
+  `GlobalKey를 지정해줘야 서로 다른 Screen인것을 감지할 수 있다.`
