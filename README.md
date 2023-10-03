@@ -19,3 +19,6 @@ https://docs.flutter.dev/get-started/install
 
 - globalKey
   `GlobalKey를 지정해줘야 서로 다른 Screen인것을 감지할 수 있다.`
+
+- PageBuilder
+  `PageView.builder로 최적화된 무한스크롤 구현 예시`
