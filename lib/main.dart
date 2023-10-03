@@ -14,6 +14,7 @@ class TikTokApp extends StatelessWidget {
       title: 'TikTok Clone',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
+        primaryColor: const Color(0xFFE9435A),
         appBarTheme: const AppBarTheme(
           centerTitle: true,
           foregroundColor: Colors.black,
@@ -21,11 +22,10 @@ class TikTokApp extends StatelessWidget {
           elevation: 0,
           titleTextStyle: TextStyle(
             color: Colors.black,
-            fontSize: Sizes.size20,
+            fontSize: Sizes.size18,
             fontWeight: FontWeight.w600,
           ),
         ),
-        primaryColor: const Color(0xFFE9435A),
       ),
       home: const MainNavigationScreen(),
     );
