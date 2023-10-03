@@ -25,3 +25,6 @@ https://docs.flutter.dev/get-started/install
 
 - videoPlayer
   `video_play package를 사용하여 videoPlayer 구현`
+
+- VisibilityDetector
+  `visibility_detector package를 사용하여 video play 제어하는 예시 코드`
