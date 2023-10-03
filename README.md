@@ -22,3 +22,6 @@ https://docs.flutter.dev/get-started/install
 
 - PageBuilder
   `PageView.builder로 최적화된 무한스크롤 구현 예시`
+
+- videoPlayer
+  `video_play package를 사용하여 videoPlayer 구현`
