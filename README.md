@@ -28,3 +28,6 @@ https://docs.flutter.dev/get-started/install
 
 - VisibilityDetector
   `visibility_detector package를 사용하여 video play 제어하는 예시 코드`
+
+- animationController
+  `animationController과 Transform.scale로 애니메이션을 구현할 수있음.`
