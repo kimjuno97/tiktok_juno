@@ -36,6 +36,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // keyboard가 열릴때 body를 resize하지 않는다.
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           Offstage(
