@@ -77,15 +77,11 @@ class _VideoPostState extends State<VideoPost>
       value: 1.5,
       duration: _animationDuration,
     );
-    _animationController.addListener(() {
-      setState(() {});
-    });
   }
 
   @override
   void dispose() {
     _videoPlayerController.dispose();
-    _animationController.dispose();
     super.dispose();
   }
 
@@ -112,8 +108,12 @@ class _VideoPostState extends State<VideoPost>
           Positioned.fill(
             child: IgnorePointer(
               child: Center(
-                child: Transform.scale(
-                  scale: _animationController.value,
+                child: AnimatedBuilder(
+                  animation: _animationController,
+                  builder: (context, child) => Transform.scale(
+                    scale: _animationController.value,
+                    child: child,
+                  ),
                   child: AnimatedOpacity(
                     opacity: _isPaused ? 1 : 0,
                     duration: _animationDuration,
