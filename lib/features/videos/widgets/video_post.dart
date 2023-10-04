@@ -18,9 +18,14 @@ class VideoPost extends StatefulWidget {
   State<VideoPost> createState() => _VideoPostState();
 }
 
-class _VideoPostState extends State<VideoPost> {
+class _VideoPostState extends State<VideoPost>
+    with SingleTickerProviderStateMixin {
   final VideoPlayerController _videoPlayerController =
       VideoPlayerController.asset("assets/videos/video.mp4");
+  final Duration _animationDuration = const Duration(milliseconds: 200);
+
+  late final AnimationController _animationController;
+  bool _isPaused = false;
 
   void _onVideoChange() {
     if (_videoPlayerController.value.isInitialized) {
@@ -36,8 +41,8 @@ class _VideoPostState extends State<VideoPost> {
 
   Future<void> _initVideoPlayer() async {
     await _videoPlayerController.initialize();
-    setState(() {});
     _videoPlayerController.addListener(_onVideoChange);
+    setState(() {});
   }
 
   /// VisibilityDetector Widget을 활용하여 화면에 전부 보여질때 동영상이 재생되도록 함.
@@ -50,20 +55,37 @@ class _VideoPostState extends State<VideoPost> {
   void _onTogglePause() {
     if (_videoPlayerController.value.isPlaying) {
       _videoPlayerController.pause();
+      _animationController.reverse();
     } else {
       _videoPlayerController.play();
+      _animationController.forward();
     }
+    setState(() {
+      _isPaused = !_isPaused;
+    });
   }
 
   @override
   void initState() {
     super.initState();
     _initVideoPlayer();
+
+    _animationController = AnimationController(
+      vsync: this,
+      lowerBound: 1.0,
+      upperBound: 1.5,
+      value: 1.5,
+      duration: _animationDuration,
+    );
+    _animationController.addListener(() {
+      setState(() {});
+    });
   }
 
   @override
   void dispose() {
     _videoPlayerController.dispose();
+    _animationController.dispose();
     super.dispose();
   }
 
@@ -81,20 +103,26 @@ class _VideoPostState extends State<VideoPost> {
                     color: Colors.black,
                   ),
           ),
-
-          /// 화면을 전부 채우고 GestureDetector로 event만 걸어 놓는 방법
+          // 화면을 전부 채우고 GestureDetector로 event만 걸어 놓는 방법
           Positioned.fill(
             child: GestureDetector(
               onTap: _onTogglePause,
             ),
           ),
-          const Positioned.fill(
+          Positioned.fill(
             child: IgnorePointer(
               child: Center(
-                child: FaIcon(
-                  FontAwesomeIcons.play,
-                  color: Colors.white,
-                  size: Sizes.size52,
+                child: Transform.scale(
+                  scale: _animationController.value,
+                  child: AnimatedOpacity(
+                    opacity: _isPaused ? 1 : 0,
+                    duration: _animationDuration,
+                    child: const FaIcon(
+                      FontAwesomeIcons.play,
+                      color: Colors.white,
+                      size: Sizes.size52,
+                    ),
+                  ),
                 ),
               ),
             ),
