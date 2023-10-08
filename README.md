@@ -39,4 +39,4 @@ https://docs.flutter.dev/get-started/install
   `RefreshIndicator로 refresh function 구현`
 
 - animationList
-  `AnumatedList를 최상위로 2개의 애니메이션 추가하여 적용`
+  `AnimatedList로 최상위로 2개의 애니메이션 추가하여 적용`
