@@ -59,6 +59,10 @@ class _VideoPostState extends State<VideoPost>
         !_videoPlayerController.value.isPlaying) {
       _videoPlayerController.play();
     }
+    // 화면에 보여지지 않을때 off
+    if (_videoPlayerController.value.isPlaying && info.visibleFraction == 0) {
+      _onTogglePause();
+    }
   }
 
   void _onCommentsTap(BuildContext context) async {
