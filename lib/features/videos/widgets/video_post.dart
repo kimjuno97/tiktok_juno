@@ -53,6 +53,8 @@ class _VideoPostState extends State<VideoPost>
 
   /// VisibilityDetector Widget을 활용하여 화면에 전부 보여질때 동영상이 재생되도록 함.
   void _onVisibilityChanged(VisibilityInfo info) {
+    /// mounted가 안되어있어도 동작함.
+    if (!mounted) return;
     if (info.visibleFraction == 1 &&
         // ios는 스크롤 할 화면이 없어도 스크롤이 됨. 그러므로 해당 조건 없으면 동영상이 재생이됨.
         !_isPaused &&
