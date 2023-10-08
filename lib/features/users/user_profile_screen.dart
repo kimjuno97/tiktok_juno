@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tiktok_juno/constants/gap.dart';
 import 'package:tiktok_juno/constants/sizes.dart';
 
 class UserProfileScreen extends StatefulWidget {
@@ -11,104 +13,284 @@ class UserProfileScreen extends StatefulWidget {
 class _UserProfileScreenState extends State<UserProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverAppBar(
-          stretch: true,
-          backgroundColor: Colors.teal,
-          collapsedHeight: 80,
-          expandedHeight: 200,
-          flexibleSpace: FlexibleSpaceBar(
-            stretchModes: const [
-              StretchMode.blurBackground,
-              StretchMode.zoomBackground,
-              StretchMode.fadeTitle,
-            ],
-            background: Image.asset(
-              "assets/images/placeholder.jpg",
-              fit: BoxFit.cover,
-            ),
-            title: const Text("Hello!"),
-          ),
-        ),
-        const SliverToBoxAdapter(
-          child: Column(
-            children: [
-              CircleAvatar(
-                backgroundColor: Colors.red,
-                radius: 20,
+    return DefaultTabController(
+      length: 2,
+      child: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            title: const Text('Rogan'),
+            actions: [
+              IconButton(
+                onPressed: () {},
+                icon: const FaIcon(
+                  FontAwesomeIcons.gear,
+                  size: Sizes.size20,
+                ),
               )
             ],
           ),
-        ),
-        SliverFixedExtentList(
-          delegate: SliverChildBuilderDelegate(
-            childCount: 50,
-            (context, index) => Container(
-              color: Colors.amber[100 * (index % 9)],
-              child: Align(
-                alignment: Alignment.center,
-                child: Text("Item $index"),
-              ),
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                const CircleAvatar(
+                  backgroundColor: Colors.red,
+                  radius: 20,
+                  foregroundImage: NetworkImage(
+                    "https://avatars.githubusercontent.com/u/101643220?v=4",
+                  ),
+                  child: Text("Rogan"),
+                ),
+                Gaps.v20,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "@Rogan",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: Sizes.size18,
+                      ),
+                    ),
+                    Gaps.h5,
+                    FaIcon(
+                      FontAwesomeIcons.solidCircleCheck,
+                      size: Sizes.size16,
+                      color: Colors.blue.shade500,
+                    )
+                  ],
+                ),
+                Gaps.v24,
+                SizedBox(
+                  height: Sizes.size48,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        children: [
+                          const Text(
+                            "97",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: Sizes.size18,
+                            ),
+                          ),
+                          Gaps.v1,
+                          Text(
+                            "Following",
+                            style: TextStyle(
+                              color: Colors.grey.shade500,
+                            ),
+                          ),
+                        ],
+                      ),
+                      VerticalDivider(
+                        width: Sizes.size32,
+                        thickness: Sizes.size1,
+                        color: Colors.grey.shade400,
+                        indent: Sizes.size14,
+                        endIndent: Sizes.size14,
+                      ),
+                      Column(
+                        children: [
+                          const Text(
+                            "10M",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: Sizes.size18,
+                            ),
+                          ),
+                          Gaps.v3,
+                          Text(
+                            "Followers",
+                            style: TextStyle(
+                              color: Colors.grey.shade500,
+                            ),
+                          )
+                        ],
+                      ),
+                      VerticalDivider(
+                        width: Sizes.size32,
+                        thickness: Sizes.size1,
+                        color: Colors.grey.shade400,
+                        indent: Sizes.size14,
+                        endIndent: Sizes.size14,
+                      ),
+                      Column(
+                        children: [
+                          const Text(
+                            "194.3M",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: Sizes.size18,
+                            ),
+                          ),
+                          Gaps.v3,
+                          Text(
+                            "Likes",
+                            style: TextStyle(
+                              color: Colors.grey.shade500,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Gaps.v14,
+                const Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: Sizes.size32,
+                  ),
+                  child: Text(
+                    "All highlights and where to watch live matches on FIFA+ I wonder how it would loook",
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                Gaps.v14,
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.link,
+                      size: Sizes.size12,
+                    ),
+                    Gaps.h4,
+                    Text(
+                      "https://github.com/kimjuno97",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+                Gaps.v20,
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.symmetric(
+                      horizontal: BorderSide(
+                        color: Colors.grey.shade200,
+                        width: 0.5,
+                      ),
+                    ),
+                  ),
+                  child: const TabBar(
+                    indicatorSize: TabBarIndicatorSize.label,
+                    indicatorColor: Colors.black,
+                    labelPadding: EdgeInsets.symmetric(
+                      vertical: Sizes.size10,
+                    ),
+                    labelColor: Colors.black,
+                    tabs: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Sizes.size20,
+                        ),
+                        child: Icon(Icons.grid_4x4_rounded),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Sizes.size20,
+                        ),
+                        child: FaIcon(FontAwesomeIcons.heart),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  child: TabBarView(
+                    children: [
+                      GridView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: 20,
+                        padding: const EdgeInsets.all(
+                          Sizes.size10,
+                        ),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: Sizes.size10,
+                          mainAxisSpacing: Sizes.size10,
+                          childAspectRatio: 9 / 20,
+                        ),
+                        itemBuilder: (context, index) => Column(
+                          children: [
+                            Container(
+                              clipBehavior: Clip.hardEdge,
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.circular(Sizes.size4),
+                              ),
+                              child: AspectRatio(
+                                aspectRatio: 1 / 1.7,
+                                child: FadeInImage.assetNetwork(
+                                  fit: BoxFit.cover,
+                                  placeholder: "assets/images/placeholder.jpg",
+                                  image:
+                                      "https://images.unsplash.com/photo-1673844969019-c99b0c933e90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80",
+                                ),
+                              ),
+                            ),
+                            Gaps.v10,
+                            const Text(
+                              "This is a very long caption for my tiktok that im upload just now currently.",
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                              style: TextStyle(
+                                fontSize: Sizes.size16 + Sizes.size2,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Gaps.v8,
+                            DefaultTextStyle(
+                              style: TextStyle(
+                                color: Colors.grey.shade600,
+                                fontWeight: FontWeight.w600,
+                              ),
+                              child: Row(
+                                children: [
+                                  const CircleAvatar(
+                                    radius: 12,
+                                    backgroundImage: NetworkImage(
+                                      "https://avatars.githubusercontent.com/u/3612017",
+                                    ),
+                                  ),
+                                  Gaps.h4,
+                                  const Expanded(
+                                    child: Text(
+                                      "My avatar is going to be very long",
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                  Gaps.h4,
+                                  FaIcon(
+                                    FontAwesomeIcons.heart,
+                                    size: Sizes.size16,
+                                    color: Colors.grey.shade600,
+                                  ),
+                                  Gaps.h2,
+                                  const Text(
+                                    "2.5M",
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const Center(
+                        child: Text('Page two'),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
-          itemExtent: 100,
-        ),
-        SliverPersistentHeader(
-          delegate: CustomDelegate(),
-          floating: true,
-        ),
-        SliverGrid(
-          delegate: SliverChildBuilderDelegate(
-            childCount: 50,
-            (context, index) => Container(
-              color: Colors.blue[100 * (index % 9)],
-              child: Align(
-                alignment: Alignment.center,
-                child: Text("Item $index"),
-              ),
-            ),
-          ),
-          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 100,
-            mainAxisSpacing: Sizes.size20,
-            crossAxisSpacing: Sizes.size20,
-            childAspectRatio: 1,
-          ),
-        )
-      ],
-    );
-  }
-}
-
-class CustomDelegate extends SliverPersistentHeaderDelegate {
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Container(
-      color: Colors.indigo,
-      child: const FractionallySizedBox(
-        heightFactor: 1,
-        child: Center(
-          child: Text(
-            'Title!!!!!',
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-        ),
+        ],
       ),
     );
-  }
-
-  @override
-  double get maxExtent => 150;
-
-  @override
-  double get minExtent => 80;
-
-  @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
-    return false;
   }
 }

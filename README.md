@@ -43,3 +43,6 @@ https://docs.flutter.dev/get-started/install
 
 - CustomScrollView
   `CustomScrollView와 사용하는 Sliver Widget들 예시 코드`
+
+- DefaultTabController
+  `DefaultTabController로 TabBarView 구현 CustomScrollView도 사용`
