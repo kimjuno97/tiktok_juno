@@ -40,3 +40,6 @@ https://docs.flutter.dev/get-started/install
 
 - animationList
   `AnimatedList로 최상위로 2개의 애니메이션 추가하여 적용`
+
+- CustomScrollView
+  `CustomScrollView와 사용하는 Sliver Widget들 예시 코드`

@@ -4,6 +4,7 @@ import 'package:tiktok_juno/constants/gap.dart';
 import 'package:tiktok_juno/constants/sizes.dart';
 import 'package:tiktok_juno/features/discover/discover_screen.dart';
 import 'package:tiktok_juno/features/inbox/inbox_screen.dart';
+import 'package:tiktok_juno/features/users/user_profile_screen.dart';
 import 'package:tiktok_juno/features/videos/video_timeline_screen.dart';
 
 import 'widgets/nav_tab.dart';
@@ -56,7 +57,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           ),
           Offstage(
             offstage: _selectedIndex != 4,
-            child: Container(),
+            child: const UserProfileScreen(),
           ),
         ],
       ),
