@@ -46,3 +46,6 @@ https://docs.flutter.dev/get-started/install
 
 - DefaultTabController
   `DefaultTabController로 TabBarView 구현 CustomScrollView도 사용`
+
+- NestedScrollView
+  `CustomScrollView + NestedScrollView로 tabBar 스크롤 시 tabBar상당에 고정하기`
