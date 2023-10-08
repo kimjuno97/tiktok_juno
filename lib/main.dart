@@ -8,13 +8,18 @@ void main() {
 
 class TikTokApp extends StatelessWidget {
   const TikTokApp({super.key});
+  final _appColorRed = const Color(0xFFE9435A);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'TikTok Clone',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        primaryColor: const Color(0xFFE9435A),
+        primaryColor: _appColorRed,
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: _appColorRed,
+        ),
         appBarTheme: const AppBarTheme(
           centerTitle: true,
           foregroundColor: Colors.black,
