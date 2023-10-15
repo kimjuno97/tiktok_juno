@@ -58,3 +58,10 @@ https://docs.flutter.dev/get-started/install
 
 - LayoutBuilder
   `LayoutBuilder를 활용하여 반응형 대응`
+
+- darkMode
+  `dark, white mode 반영 및 googleFont로 font입히기`
+
+### Flutter 참고하면 좋은 자료들
+
+- [flutter widget of the week](https://youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&si=hqjynhQqFljGCVRm)

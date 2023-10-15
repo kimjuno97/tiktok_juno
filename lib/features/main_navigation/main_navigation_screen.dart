@@ -6,6 +6,7 @@ import 'package:tiktok_juno/features/discover/discover_screen.dart';
 import 'package:tiktok_juno/features/inbox/inbox_screen.dart';
 import 'package:tiktok_juno/features/users/user_profile_screen.dart';
 import 'package:tiktok_juno/features/videos/video_timeline_screen.dart';
+import 'package:tiktok_juno/utils.dart';
 
 import 'widgets/nav_tab.dart';
 import 'widgets/post_video_button.dart';
@@ -38,9 +39,12 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = isDarkMode(context);
     return Scaffold(
       // keyboard가 열릴때 body를 resize하지 않는다.
       resizeToAvoidBottomInset: false,
+      backgroundColor:
+          _selectedIndex == 0 || isDark ? Colors.black : Colors.white,
       body: Stack(
         children: [
           Offstage(
@@ -62,7 +66,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        color: _selectedIndex == 0 ? Colors.black : Colors.white,
+        color: _selectedIndex == 0 || isDark ? Colors.black : Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(
             Sizes.size12,

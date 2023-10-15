@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok_juno/constants/gap.dart';
 import 'package:tiktok_juno/constants/sizes.dart';
+import 'package:tiktok_juno/utils.dart';
 
 class ActivityScreen extends StatefulWidget {
   const ActivityScreen({super.key});
@@ -14,6 +15,7 @@ class _ActivityScreenState extends State<ActivityScreen>
     with SingleTickerProviderStateMixin {
   final List<String> _notifications = List.generate(20, (index) => "${index}h");
 
+  /// class로 정의하면 타입을 더욱 명확하게 지정가능
   final List<Map<String, dynamic>> _tabs = [
     {
       "title": "All activity",
@@ -86,6 +88,7 @@ class _ActivityScreenState extends State<ActivityScreen>
 
   @override
   Widget build(BuildContext context) {
+    final isDark = isDarkMode(context);
     return Scaffold(
       appBar: AppBar(
         title: GestureDetector(
@@ -165,9 +168,11 @@ class _ActivityScreenState extends State<ActivityScreen>
                       width: Sizes.size52,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.white,
+                        color: isDark ? Colors.grey.shade800 : Colors.white,
                         border: Border.all(
-                          color: Colors.grey.shade400,
+                          color: isDark
+                              ? Colors.grey.shade800
+                              : Colors.grey.shade400,
                           width: Sizes.size1,
                         ),
                       ),
@@ -181,10 +186,10 @@ class _ActivityScreenState extends State<ActivityScreen>
                     title: RichText(
                       text: TextSpan(
                         text: "Account updates:",
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          color: Colors.black,
                           fontSize: Sizes.size16,
+                          color: isDark ? null : Colors.black,
                         ),
                         children: [
                           const TextSpan(
@@ -228,9 +233,9 @@ class _ActivityScreenState extends State<ActivityScreen>
     return SlideTransition(
       position: _panelAnimation,
       child: Container(
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
+        decoration: BoxDecoration(
+          color: Theme.of(context).appBarTheme.backgroundColor,
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(
               Sizes.size5,
             ),
@@ -248,7 +253,6 @@ class _ActivityScreenState extends State<ActivityScreen>
                   children: [
                     FaIcon(
                       tab["icon"],
-                      color: Colors.black,
                       size: Sizes.size16,
                     ),
                     Gaps.h20,
