@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tiktok_juno/features/authentication/sign_up_screen.dart';
+import 'package:tiktok_juno/features/main_navigation/main_navigation_screen.dart';
 import 'constants/sizes.dart';
 
 void main() async {
@@ -49,7 +49,7 @@ class TikTokApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const SignUpScreen(),
+      home: const MainNavigationScreen(),
     );
   }
 }
