@@ -62,6 +62,10 @@ https://docs.flutter.dev/get-started/install
 - darkMode
   `dark, white mode 반영 및 googleFont로 font입히기`
 
+- material3
+  `material3에서는 container로 BottomAppBar디자인`
+
 ### Flutter 참고하면 좋은 자료들
 
 - [flutter widget of the week](https://youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&si=hqjynhQqFljGCVRm)
+- [material 3](https://m3.material.io/)

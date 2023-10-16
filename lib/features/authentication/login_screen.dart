@@ -4,6 +4,7 @@ import 'package:tiktok_juno/constants/gap.dart';
 import 'package:tiktok_juno/constants/sizes.dart';
 import 'package:tiktok_juno/features/authentication/login_form_screen.dart';
 import 'package:tiktok_juno/features/authentication/widgets/auth_button.dart';
+import 'package:tiktok_juno/utils.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -61,12 +62,14 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.grey.shade50,
-        elevation: 2,
+      bottomNavigationBar: Container(
+        color: isDarkMode(context)
+            ? Theme.of(context).appBarTheme.backgroundColor
+            : Colors.grey.shade50,
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: Sizes.size32,
+          padding: const EdgeInsets.only(
+            top: Sizes.size32,
+            bottom: Sizes.size32,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

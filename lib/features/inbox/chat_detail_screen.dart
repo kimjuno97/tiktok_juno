@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok_juno/constants/gap.dart';
 import 'package:tiktok_juno/constants/sizes.dart';
+import 'package:tiktok_juno/utils.dart';
 
 class ChatDetailScreen extends StatefulWidget {
   const ChatDetailScreen({super.key});
@@ -15,17 +16,17 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const ListTile(
+        title: ListTile(
           contentPadding: EdgeInsets.zero,
           horizontalTitleGap: Sizes.size8,
-          leading: CircleAvatar(
+          leading: const CircleAvatar(
             radius: Sizes.size24,
             foregroundImage: NetworkImage(
               "https://avatars.githubusercontent.com/u/3612017",
             ),
             child: Text('니꼬'),
           ),
-          title: Text(
+          title: const Text(
             '니꼬',
             style: TextStyle(
               fontWeight: FontWeight.w600,
@@ -37,13 +38,13 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
             children: [
               FaIcon(
                 FontAwesomeIcons.flag,
-                color: Colors.black,
+                color: Theme.of(context).iconTheme.color,
                 size: Sizes.size20,
               ),
               Gaps.h32,
               FaIcon(
                 FontAwesomeIcons.ellipsis,
-                color: Colors.black,
+                color: Theme.of(context).iconTheme.color,
                 size: Sizes.size20,
               ),
             ],
@@ -97,9 +98,9 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
           Positioned(
             bottom: 0,
             width: MediaQuery.of(context).size.width,
-            child: BottomAppBar(
+            child: Container(
               padding: const EdgeInsets.symmetric(horizontal: Sizes.size10),
-              color: Colors.grey.shade50,
+              color: isDarkMode(context) ? Colors.black : Colors.grey.shade50,
               child: const Row(
                 children: [
                   Expanded(child: TextField()),
