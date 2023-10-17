@@ -83,6 +83,10 @@ https://docs.flutter.dev/get-started/install
 lutter gen-l10n
 ```
 
+- Flutter Intl (extension)
+  shift + p 누르고 Flutter Intl: Initialize 찾아서 클릭 하면,
+  generated폴더와 i10n폴더 생성됨
+
 #### lib/intl_en.arb
 
 `@SignUpTitle`로 주석을 추가할 수있음.
