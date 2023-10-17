@@ -65,7 +65,39 @@ https://docs.flutter.dev/get-started/install
 - material3
   `material3에서는 container로 BottomAppBar디자인`
 
+- intl
+  `서비스 국제화를 위한 intl 사용예시`
+
 ### Flutter 참고하면 좋은 자료들
 
-- [flutter widget of the week](https://youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&si=hqjynhQqFljGCVRm)
+- [flutter widget of the w eek](https://youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&si=hqjynhQqFljGCVRm)
 - [material 3](https://m3.material.io/)
+- [flutter i18n](https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization)
+
+#### 커멘드 명령어
+
+- l10n
+  arb 의 내용을 추가할때마다 자동으로 연결되는 것이 아니라 regenerate 해주어야 한다.
+
+```bash
+lutter gen-l10n
+```
+
+#### lib/intl_en.arb
+
+`@SignUpTitle`로 주석을 추가할 수있음.
+
+```arb
+{
+  "signUpTitle": "Sign up for {nameOfTheApp}",
+  "@signUpTitle": {
+    "description": "The title people see when they open the app for the first time.",
+    "placeholders": {
+      "nameOfTheApp": {
+        "type": "String",
+        "example": "TikTok"
+      }
+    }
+  }
+}
+```

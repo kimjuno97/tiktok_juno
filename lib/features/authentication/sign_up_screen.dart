@@ -6,6 +6,7 @@ import 'package:tiktok_juno/features/authentication/login_screen.dart';
 import 'package:tiktok_juno/features/authentication/username_screen.dart';
 import 'package:tiktok_juno/features/authentication/widgets/auth_button.dart';
 import 'package:tiktok_juno/utils.dart';
+import "package:flutter_gen/gen_l10n/intl_generated.dart";
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -49,7 +50,7 @@ class SignUpScreen extends StatelessWidget {
                 children: [
                   Gaps.v80,
                   Text(
-                    "Sign up for TikTok",
+                    AppLocalizations.of(context)!.signUpTitle("TikTok"),
                     // main.dart에 정의한 headlineSmall을 가져오기 color지정
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                           color: Colors.red,
