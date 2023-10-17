@@ -72,12 +72,14 @@ https://docs.flutter.dev/get-started/install
   `Flutter Intl extension을 활용한 국제화`
   `Pluralize and Select 사용 예시`
   `Extract to ARB를 활용하면 arb파일로 자동으로 텍스트를 변수화 할 . 수 있다.`
+  `arb파일에서 'when'을 활용하면 DateFormat도 가능하다.`
 
 ### Flutter 참고하면 좋은 자료들
 
 - [flutter widget of the w eek](https://youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&si=hqjynhQqFljGCVRm)
 - [material 3](https://m3.material.io/)
 - [flutter i18n](https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization)
+- [intl DateFormat](https://pub.dev/documentation/intl/latest/intl/DateFormat-class.html)
 
 #### 커멘드 명령어
 

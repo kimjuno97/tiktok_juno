@@ -50,7 +50,7 @@ class SignUpScreen extends StatelessWidget {
                 children: [
                   Gaps.v80,
                   Text(
-                    S.of(context).signUpTitle("TikTok"),
+                    S.of(context).signUpTitle("TikTok", DateTime.now()),
                     // main.dart에 정의한 headlineSmall을 가져오기 color지정
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                           color: Colors.red,
