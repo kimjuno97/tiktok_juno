@@ -68,6 +68,10 @@ https://docs.flutter.dev/get-started/install
 - intl
   `서비스 국제화를 위한 intl 사용예시`
 
+- flutter-intl-extension
+  `Flutter Intl extension을 활용한 국제화`
+  `Pluralize and Select 사용 예시`
+
 ### Flutter 참고하면 좋은 자료들
 
 - [flutter widget of the w eek](https://youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&si=hqjynhQqFljGCVRm)
@@ -87,7 +91,7 @@ lutter gen-l10n
   shift + p 누르고 Flutter Intl: Initialize 찾아서 클릭 하면,
   generated폴더와 i10n폴더 생성됨
 
-#### lib/intl_en.arb
+#### intl_en.arb
 
 `@SignUpTitle`로 주석을 추가할 수있음.
 
