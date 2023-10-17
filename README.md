@@ -71,6 +71,7 @@ https://docs.flutter.dev/get-started/install
 - flutter-intl-extension
   `Flutter Intl extension을 활용한 국제화`
   `Pluralize and Select 사용 예시`
+  `Extract to ARB를 활용하면 arb파일로 자동으로 텍스트를 변수화 할 . 수 있다.`
 
 ### Flutter 참고하면 좋은 자료들
 
@@ -88,8 +89,9 @@ lutter gen-l10n
 ```
 
 - Flutter Intl (extension)
-  shift + p 누르고 Flutter Intl: Initialize 찾아서 클릭 하면,
-  generated폴더와 i10n폴더 생성됨
+  1. `shift + p` 누르고 Flutter Intl: Initialize 찾아서 클릭 하면,
+     generated폴더와 i10n폴더 생성됨
+  2. 텍스트를 감싸고 `commend + .`을 눌러 Extract to ARB를 클릭하면 I10n의 arb파일에 변수화를 자동으로 할 수 있음.
 
 #### intl_en.arb
 
