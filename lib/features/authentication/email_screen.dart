@@ -5,9 +5,17 @@ import 'package:tiktok_juno/constants/sizes.dart';
 import 'password_screen.dart';
 import 'widgets/form_button.dart';
 
+class EmailScreenArgs {
+  final String username;
+  EmailScreenArgs({required this.username});
+}
+
 class EmailScreen extends StatefulWidget {
-  static const routeName = "/email";
-  const EmailScreen({super.key});
+  static String routeName = "email";
+  static String routeURL = "/email";
+
+  final String username;
+  const EmailScreen({super.key, required this.username});
 
   @override
   State<EmailScreen> createState() => _EmailScreenState();
@@ -77,9 +85,9 @@ class _EmailScreenState extends State<EmailScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Gaps.v40,
-              const Text(
-                "What is your email?",
-                style: TextStyle(
+              Text(
+                "What is your email ${widget.username}",
+                style: const TextStyle(
                   fontSize: Sizes.size24,
                   fontWeight: FontWeight.w700,
                 ),

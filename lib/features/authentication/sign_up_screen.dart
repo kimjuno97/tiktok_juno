@@ -10,15 +10,16 @@ import 'package:tiktok_juno/generated/l10n.dart';
 import 'package:tiktok_juno/utils.dart';
 
 class SignUpScreen extends StatelessWidget {
-  static const routeName = "/";
+  static const routeURL = "/";
+  static const routeName = "signUp";
   const SignUpScreen({super.key});
 
   void _onLoginTap(BuildContext context) {
-    context.push(LoginScreen.routeName);
+    context.push(LoginScreen.routeURL);
   }
 
   void _onEmailTap(BuildContext context) {
-    context.push(UsernameScreen.routeName);
+    context.push(UsernameScreen.routeURL);
   }
 
   @override

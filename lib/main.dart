@@ -4,7 +4,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tiktok_juno/router.dart';
 import 'constants/sizes.dart';
-import 'features/authentication/sign_up_screen.dart';
 import 'generated/l10n.dart';
 
 void main() async {
