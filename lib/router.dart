@@ -1,3 +1,5 @@
+import 'package:flutter/animation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
 import 'common/widgets/main_navigation/main_navigation_screen.dart';
@@ -51,7 +53,21 @@ final router = GoRouter(
     GoRoute(
       path: VideoRecordingScreen.routeURL,
       name: VideoRecordingScreen.routeName,
-      builder: (context, state) => const VideoRecordingScreen(),
+      // 페이지 아래서 위로 올라오는 애니메이션
+      pageBuilder: (context, state) => CustomTransitionPage(
+        transitionDuration: const Duration(milliseconds: 200),
+        child: const VideoRecordingScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          final position = Tween(
+            begin: const Offset(0, 1),
+            end: Offset.zero,
+          ).animate(animation);
+          return SlideTransition(
+            position: position,
+            child: child,
+          );
+        },
+      ),
     ),
     GoRoute(
       path: "/:tab",
