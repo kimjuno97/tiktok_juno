@@ -12,6 +12,8 @@ import 'package:tiktok_juno/constants/sizes.dart';
 import 'video_preview_screen.dart';
 
 class VideoRecordingScreen extends StatefulWidget {
+  static const String routeName = "postVideo";
+  static const String routeURL = "/upload";
   const VideoRecordingScreen({super.key});
 
   @override

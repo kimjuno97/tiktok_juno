@@ -6,6 +6,7 @@ import 'package:tiktok_juno/constants/sizes.dart';
 import 'package:tiktok_juno/features/discover/discover_screen.dart';
 import 'package:tiktok_juno/features/inbox/inbox_screen.dart';
 import 'package:tiktok_juno/features/users/user_profile_screen.dart';
+import 'package:tiktok_juno/features/videos/vide_recording_screen.dart';
 import 'package:tiktok_juno/features/videos/video_timeline_screen.dart';
 import 'package:tiktok_juno/utils.dart';
 
@@ -42,13 +43,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   }
 
   void _onPostVideoButtonTap() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => Scaffold(
-          appBar: AppBar(title: const Text('Record video')),
-        ),
-      ),
-    );
+    context.pushNamed(VideoRecordingScreen.routeName);
   }
 
   @override
