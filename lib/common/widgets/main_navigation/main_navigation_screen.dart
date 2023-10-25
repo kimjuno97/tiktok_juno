@@ -6,10 +6,9 @@ import 'package:tiktok_juno/constants/sizes.dart';
 import 'package:tiktok_juno/features/discover/discover_screen.dart';
 import 'package:tiktok_juno/features/inbox/inbox_screen.dart';
 import 'package:tiktok_juno/features/users/user_profile_screen.dart';
-import 'package:tiktok_juno/features/videos/vide_recording_screen.dart';
-import 'package:tiktok_juno/features/videos/video_timeline_screen.dart';
+import 'package:tiktok_juno/features/videos/views/vide_recording_screen.dart';
+import 'package:tiktok_juno/features/videos/views/video_timeline_screen.dart';
 import 'package:tiktok_juno/utils.dart';
-
 import 'widgets/nav_tab.dart';
 import 'widgets/post_video_button.dart';
 
