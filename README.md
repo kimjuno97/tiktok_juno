@@ -111,6 +111,10 @@ https://docs.flutter.dev/get-started/install
 
   `provider를 활용하면 Class내부에서 listener를 사용하지 않고 context.watch<T>로 접근 가능`
 
+- flutter_riverpod
+
+  `flutter_riverpod api fetch, error, loading 처리코드 사용 예시를 볼 수 있다.`
+
 ### Flutter 참고하면 좋은 자료들
 
 - [flutter widget of the w eek](https://youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&si=hqjynhQqFljGCVRm)
