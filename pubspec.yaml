@@ -50,6 +50,7 @@ dependencies:
   permission_handler: ^10.2.0
   provider: 6.0.5
   shared_preferences: ^2.2.2
+  flutter_riverpod: ^2.3.6
 
 dev_dependencies:
   flutter_test:
