@@ -99,6 +99,10 @@ https://docs.flutter.dev/get-started/install
 
   `InheritedWidget은 앱의 최상위에서 정의해서 하위 위젯에서 VideoConfig.of(context)로 접근할 수 있게 해준다`
 
+- ChangeNotifier를
+
+  `ChangeNotifier를 사용하면 InheritedWidget를 썼을때보다 간단하게 value 공유 가능`
+
 ### Flutter 참고하면 좋은 자료들
 
 - [flutter widget of the w eek](https://youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG&si=hqjynhQqFljGCVRm)
