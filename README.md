@@ -108,6 +108,7 @@ https://docs.flutter.dev/get-started/install
   `ValueNotifier는 하나의 값을 전역으로 공유할때 사용한다. ValueListenableBuilder Widget으로 listener를 사용하지 않고 감지할 수 있다. `
 
 - provider
+
   `provider를 활용하면 Class내부에서 listener를 사용하지 않고 context.watch<T>로 접근 가능`
 
 ### Flutter 참고하면 좋은 자료들

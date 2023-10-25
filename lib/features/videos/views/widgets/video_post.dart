@@ -4,12 +4,11 @@ import 'package:provider/provider.dart';
 import 'package:tiktok_juno/common/widgets/video_config/video_config.dart';
 import 'package:tiktok_juno/constants/gap.dart';
 import 'package:tiktok_juno/constants/sizes.dart';
-import 'package:tiktok_juno/features/videos/widgets/video_comments.dart';
 import 'package:tiktok_juno/generated/l10n.dart';
 import 'package:video_player/video_player.dart';
 import 'package:visibility_detector/visibility_detector.dart';
-
 import 'video_button.dart';
+import 'video_comments.dart';
 
 class VideoPost extends StatefulWidget {
   final Function onVideoFinished;
