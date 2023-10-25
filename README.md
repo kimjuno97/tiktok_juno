@@ -95,13 +95,17 @@ https://docs.flutter.dev/get-started/install
   `Extract to ARB를 활용하면 arb파일로 자동으로 텍스트를 변수화 할 . 수 있다.`
   `arb파일에서 'when'을 활용하면 DateFormat도 가능하다.`
 
-- InheritedWidget은
+- InheritedWidget
 
   `InheritedWidget은 앱의 최상위에서 정의해서 하위 위젯에서 VideoConfig.of(context)로 접근할 수 있게 해준다`
 
-- ChangeNotifier를
+- ChangeNotifier
 
   `ChangeNotifier를 사용하면 InheritedWidget를 썼을때보다 간단하게 value 공유 가능`
+
+- ValueNotifier
+
+  `ValueNotifier는 하나의 값을 전역으로 공유할때 사용한다. ValueListenableBuilder Widget으로 listener를 사용하지 않고 감지할 수 있다. `
 
 ### Flutter 참고하면 좋은 자료들
 
