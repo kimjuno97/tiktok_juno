@@ -32,8 +32,10 @@ class _BirthdayScreenState extends State<BirthdayScreen> {
   }
 
   void _onNextTap() {
+    context.goNamed(InterestsScreen.routeName);
+
     /// history 전부 제거하는 2가지 방법
-    context.pushReplacementNamed(InterestsScreen.routeName);
+    // context.pushReplacementNamed(InterestsScreen.routeName);
 
     // Navigator.of(context).pushAndRemoveUntil(
     //   MaterialPageRoute(
