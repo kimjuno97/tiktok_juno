@@ -6,6 +6,8 @@ import 'tutorial_screen.dart';
 import 'widgets/interest_button.dart';
 
 class InterestsScreen extends StatelessWidget {
+  static String routeName = 'interests';
+  static String routeURL = '/interests';
   const InterestsScreen({super.key});
 
   void _onNextTap(BuildContext context) {
